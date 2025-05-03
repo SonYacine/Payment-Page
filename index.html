@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="payment-container">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <img src="4.png" alt="Dark Mode" id="dark-mode-icon"/>
+        </button>
+
+        <div class="card-logos">
+            <img class="logo" src="1.png" alt="Visa Logo" />
+            <img class="logo" src="2.png" alt="MasterCard Logo" />
+            <img class="logo" src="3.svg" alt="PayPal Logo" />
+        </div>
+        <h2>Payment Information</h2>
+        <form class="payment-form">
+            <div class="input-container">
+                <input type="text" placeholder="Cardholder Name" id="cardholder-name" required />
+            </div>
+            <div class="input-container">
+                <input type="text" placeholder="Card Number" id="card-number" required />
+            </div>
+            <div class="input-container">
+                <input type="text" placeholder="Expiration Date (MM/YY)" id="expiration-date" required />
+            </div>
+            <div class="input-container">
+                <input type="text" placeholder="CVV" id="cvv" required />
+            </div>
+            <div class="payment-buttons">
+                <button type="button" class="pay-btn">Pay Now</button>
+                <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const icon = document.getElementById('dark-mode-icon');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.src = '5.png';
+            } else {
+                icon.src = '4.png';
+            }
+        }
+    </script>
+</body>
+</html>
